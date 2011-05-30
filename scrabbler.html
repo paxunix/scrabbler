@@ -1,0 +1,151 @@
+<!-- $Id: scrabbler.html,v 1.1 2003/11/16 18:18:29 rsh Exp rsh $ -->
+<html>
+  <head>
+    <title>Scrabbler</title>
+
+    <script type="application/x-javascript" src="scrabbler.js"> </script>
+
+    <style>
+      BODY
+      {
+        font-family:  Arial;
+      }
+
+      .dictheader
+      {
+        background-color:  #3366cc;
+        color:  #ffffff;
+        font-weight:  bold;
+        text-align: center;
+      }
+
+      .evenwordrow
+      {
+        background-color:  #d9f1ff;
+      }
+
+      .wordlist
+      {
+        width:  40%;
+        vertical-align:  baseline;
+      }
+
+      .worddef
+      {
+        width:  60%;
+      }
+
+      .evenselrow
+      {
+        background-color:  #d7ffef;
+      }
+
+      .selheader
+      {
+        background-color:  green;
+        color:  #ffffff;
+        font-weight:  bold;
+        text-align: center;
+      }
+
+      #letterstring
+      {
+        font-style:  italic;
+      }
+
+      .btn
+      {
+        background-color:  #e0e0e0;
+        border-width: 1px;
+        color: #606060;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body onload="Main()">
+    <form onsubmit="return false">
+      <table style="font-size: 10pt">
+        <tr>
+          <td>Enter word to look up or letters for Word Builder:</td>
+          <td><input type="text" name="letters" size="9" maxlength="9"> <input type="checkbox" name="exact">Exact match</input> </td>
+        </tr>
+
+        <tr>
+          <td> <center> <input type="button" value="Clear Everything" onclick="ClearAll();"> </center> </td>
+          <td> <input type="button" value="Look up" onclick="Lookup()"> <input type="button" value="Build Words" onclick="Lookup()"> </td>
+        </tr>
+      </table>
+    </form>
+
+    <hr>
+
+    <table width="100%">
+      <tr>
+        <td width="60%" class="dictheader">Words using <span id="letterstring">XXX</span></td>
+        <td class="selheader">Selected words</td>
+      </tr>
+      <tr>
+        <td><input class="btn" type="button" value="Click to clear this list" onclick="g_DictData.Clear()"></input></td>
+        <td><input class="btn" type="button" value="Click to clear this list" onclick="g_SelData.Clear()"></input></td>
+      </tr>
+    </table>
+
+    <!-- XXX: the divs are so that we can put scrollbars on each table -->
+    <div style="float:left; width: 60%">
+      <table id="wordtable" width="100%" style="font-size:  10pt">
+        <tr>
+          <td class="wordlist">1.  Word, word1, word2</td> <td class="worddef">Definition of word to left alskj flaksj fla kjsdlfka lkj flaksjd lfk ajsldkfj laskf laksdf jlaksjf alsjf laksdjfl aksdfl askdf </td>
+        </tr>
+
+        <tr class="evenwordrow">
+          <td valign="baseline">2.  worda, wordb, wordc</td> <td>more definition; asldkj alskdj laskdjf ;lakjsd lfkajs dl;kasjd flkajsdlfka jsldkf alsdkjf alskjf laksd jflaksdjflaksjdlkajsdlfkasdl kjakldfa lskdfasd asd</td>
+        </tr>
+
+        <tr>
+          <td valign="baseline">3.  Word, word1, word2</td> <td width="60%">Definition of word to left alskj flaksj fla kjsdlfka lkj flaksjd lfk ajsldkfj laskf laksdf jlaksjf alsjf laksdjfl aksdfl askdf </td>
+        </tr>
+
+        <tr class="evenwordrow">
+          <td valign="baseline">4.  worda, wordb, wordc</td> <td>more definition; asldkj alskdj laskdjf ;lakjsd lfkajs dl;kasjd flkajsdlfka jsldkf alsdkjf alskjf laksd jflaksdjflaksjdlkajsdlfkasdl kjakldfa lskdfasd asd</td>
+        </tr>
+      </table>
+    </div>
+
+
+    <div style="float: right; width: 40%;">
+      <table id="seltable" width="100%" style="margin-left: 2px; font-size: 10pt">
+        <tr>
+          <td>1.  blah</td>
+        </tr>
+
+        <tr class="evenselrow">
+          <td>2.  blah2</td>
+        </tr>
+
+        <tr>
+          <td>3.  some-other-word</td>
+        </tr>
+
+        <tr class="evenselrow">
+          <td>4.  yet-another-word</td>
+        </tr>
+
+        <tr>
+          <td>5.  some-other-word-again</td>
+        </tr>
+
+        <tr class="evenselrow">
+          <td>6.  yet-another-word-again</td>
+        </tr>
+      </table>
+    </div>
+
+    <hr style="clear: both">
+
+    <!--
+    <iframe style="display: none" id="dumbframe" src="about:blank"> </iframe>
+    -->
+    <iframe id="dumbframe" src="about:blank"> </iframe>
+  </body>
+</html>

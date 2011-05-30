@@ -1,0 +1,12 @@
+Utility page to help players look up words while playing Scrabble.
+
+This was one of my first attempts at DHTML (for you young'ins out there,
+that's what all your fancy AJAX-y stuff was called before there was AJAX).
+
+You could enter a set of letters and it would dynamically go scrape some
+page Hasbro had set up for people to do word-lookups, then pull out the
+relevant lists of words and put them in its own div without all the flash
+content and ads and stuff.
+
+My JS, CSS and HTML has evolved since then (hopefully in a positive
+direction).
